@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77,<85"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airhockey-defense"
+version = "1.1.0"
+description = "Camera-based puck tracking and predictive air-hockey defence on Raspberry Pi"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24,<3",
+    "pyserial>=3.5,<4",
+]
+
+[project.optional-dependencies]
+# Choose exactly one OpenCV extra on a desktop/CI machine. Raspberry Pi camera
+# installations use the OS packages (including Picamera2) described in README.
+desktop = ["opencv-python>=4.8,<5"]
+headless = ["opencv-python-headless>=4.8,<5"]
+dev = [
+    "ruff==0.17.4",
+    "build==1.6.1",
+]
+
+[project.scripts]
+airhockey = "airhockey.__main__:main"
+airhockey-calibrate = "airhockey.calibration:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["airhockey*"]
+exclude = ["tests*"]
+namespaces = false
+
+[tool.ruff]
+required-version = "==0.17.4"
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

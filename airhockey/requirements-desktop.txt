@@ -1,0 +1,4 @@
+# PC simulation/test only. Raspberry Pi camera installs should use apt instead.
+numpy>=1.24,<3
+opencv-python>=4.8,<5
+pyserial>=3.5,<4

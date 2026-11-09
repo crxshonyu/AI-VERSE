@@ -1,0 +1,11 @@
+include README.md
+include README_KO.md
+include CONTRIBUTING.md
+include CHANGELOG.md
+include requirements-desktop.txt
+include config/example.json
+recursive-include docs *.md *.png *.jpg *.svg *.gif
+recursive-include firmware *.md *.ino
+recursive-include tools *.sh
+recursive-include tests *.py
+global-exclude __pycache__ *.py[cod]

@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-09",
+  "software_version": "1.1.0",
+  "test_count": 68,
+  "tests_passed": 68,
+  "python": "3.12.14",
+  "opencv": "4.14.0",
+  "numpy": "2.5.4",
+  "ruff": "0.17.4",
+  "build": "1.6.1",
+  "checks": [
+    "ruff check",
+    "ruff format --check",
+    "unittest",
+    "installed CLI synthetic smoke",
+    "sdist and wheel build"
+  ],
+  "hardware_verified": false,
+  "github_actions_executed": false,
+  "test_command": "python -m unittest discover -s tests -v"
+}
